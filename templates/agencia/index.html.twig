@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<div class="text-2xl">Escolha sua agencia:<div>
+
+<div class="h-64 grid grid-rows-3 grid-flow-col gap-4">
+    
+    {% if agenciaAll|length > 0 %}
+        {% for agencia in agenciaAll %}
+            <div class="bg-gray-300  text-2xl text-center underline text-blue-800 rounded-xl
+            transition duration-500 ease-in-out bg-gray-200 hover:bg-red-400 transform hover:-translate-y-1">
+                <a class="" href="{{path('app_agencia_show', { agenciaId: agencia.id })}}">
+                    <div class="m-1">{{ agencia.nome}}</div>
+                </a>
+            </div>
+        {% endfor %}
+    {% else %}
+        Não tem nada para exibir.
+    {% endif %}
+</div>
+{% endblock %}

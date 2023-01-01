@@ -1,0 +1,14 @@
+{% block body %}
+
+<h3> {{agencia.nome}} </h3>
+
+<div>
+    <div>
+    {{agencia.numeroAgencia}}
+    </div>
+
+    <div style="color:grey; font-weight:bold;">
+        {{agencia.created|date('d/m/Y')}}
+    </div>
+</div>
+{% endblock %}
